@@ -1,0 +1,32 @@
+Game map (Horizontal)
+Display car
+Allow car to move 
+Creat obstacle and update position 
+Drop obstacle in random positions 
+    randomness 
+        time 
+        position
+    Class 
+        positive
+        moveDown() 
+
+
+- [ ] Car drive horizontally 
+- [ ] it crosses every car it goes to top place: starts from 50 and should reach 1 place to win
+- [ ] moves top/down/right/left 
+- [ ] Can pick a gun and shoot —> one gun can should twice 
+- [ ] Should get oil to run after every 20 second (extra)
+- [ ] If the car gets into collision / oil finishes —> Game Over!
+
+Further
+- Choose 1 car out of 3a (extra)
+
+
+Top left corner: 
+Shows -> 
+- Place
+- Show Gun Shoot # 
+- Time (extra)
+- Oil amount (extra)
+
+ 

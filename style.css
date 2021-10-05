@@ -1,0 +1,50 @@
+body{
+    background-color: rgb(2, 1, 1);
+    text-align: center;
+}
+
+#game{
+    height: 500px;
+    width: 900px;
+
+    /* height: 100vh;
+    width: 90vw; */
+
+    
+    background-color: white;
+    margin: 30px auto;
+    position: relative;
+}
+
+#timer{
+    position: absolute;
+    top: 70px;
+    left: 40px;
+    font-weight: 400;
+    font-size: 25px;
+    color: rgb(170, 228, 255);
+}
+
+.nameGame{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    font-weight: 400;
+    font-size: 25px;
+    color: rgb(3, 66, 60);
+}
+
+#car {
+    background-color: tomato;
+    position: absolute;
+}
+
+#obstacle{
+    background-color: teal;
+    position: absolute;
+}
+
+#bullet{
+    background-color: grey;
+    position: absolute;
+}
