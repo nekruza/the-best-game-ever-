@@ -1,7 +1,6 @@
 class Game {
     constructor(){
         this.currentTime = 0;
-        this.rolex = 0;
         this.car = null; 
         this.obstacleArr = [];
         this.bulletArr = [];
@@ -17,6 +16,7 @@ class Game {
         setInterval(()=>{
             this.currentTime++;
             
+            //create obstacles
             if(this.currentTime % 6 === 0){
                 const newObstacle = new Obstacle();
                 newObstacle.create();
@@ -24,9 +24,12 @@ class Game {
             }
 
             this.obstacleArr.forEach((obstacle) => {
+
+                //move obstacles
                 obstacle.moveObsLeft()
                 obstacle.style();
 
+                //collision detection
                 if(this.car.x < obstacle.x + obstacle.width &&
                     this.car.x + this.car.width > obstacle.x &&
                     this.car.y < obstacle.y + obstacle.height &&
@@ -50,30 +53,51 @@ class Game {
 
         
         setInterval( () =>{
-            this.rolex++;
 
-            if(this.rolex % 6 === 0) {
-                const bulletX = new Bullet();
-                bulletX.create();
-                this.bulletArr.push(bulletX)
-            };
+            this.bulletArr.forEach((bullet, index)=>{
 
-            this.bulletArr.forEach((elm)=>{ 
-                elm.shoot()
-                elm.draw();
+                //move bullets
+                bullet.shoot()
+                bullet.draw();
 
-                // if(this.car.x < obstacle.x + obstacle.width &&
-                //     this.car.x + this.car.width > obstacle.x &&
-                //     this.car.y < obstacle.y + obstacle.height &&
-                //     this.car.y + this.car.height > obstacle.y){
+          
+                if(this.obstacleArr.length >0 ){
 
-                //     alert("Enemy died!");
+                    
+                this.bulletArr.forEach((bullet, index)=>{
+                    
+                    this.obstacleArr.forEach((obstacle, index)=>{
+                        if (bullet.x < obstacle.x + obstacle.width &&
+                            bullet.x + bullet.width > obstacle.x &&
+                            bullet.y < obstacle.y + obstacle.height &&
+                            bullet.y + bullet.height > obstacle.y) {
+                                console.log('it touched')
 
-                // } else 
-                if(elm.x > 100) {
-                    elm.remove(); 
-                    this.bulletArr.shift(); 
-                }
+                                bullet.remove();
+                                // this.bulletArr.splice(index).remove();
+                                // @todo: remove this bullet from  bulletArr (.splice() + the index )
+                                
+                                /*
+                                bulletArr.pop() //end
+                                bulletArr.shift() //beginning
+                                bulletArr.splice() //middle
+                                */
+                               
+                               
+                               obstacle.remove();
+                            //    this.obstacleArr.splice(index).remove();
+                                // @todo: remove this obstacle from  obstacleArr
+                            } 
+                        })
+        
+                     })
+                } 
+                
+                if(bullet.x > 100) {
+                  bullet.remove();                    
+                  this.bulletArr.shift(); 
+                 }
+                
             });
  
 
@@ -106,6 +130,10 @@ class Game {
                     this.car.moveDown();
                     this.car.draw();
                 }
+            } else if(e.key === 'z'){
+                const bulletX = new Bullet(this.car.x, this.car.y);
+                bulletX.create();
+                this.bulletArr.push(bulletX)
             }
         })
     }
@@ -117,8 +145,8 @@ class Car {
     constructor(){
         this.x = 0;
         this.y = 50;
-        this.width = 20;
-        this.height = 15;
+        this.width = 10;
+        this.height = 14;
         this.domElm = null;
     }
 
@@ -161,7 +189,7 @@ class Obstacle {
     constructor(){
         this.width = 10;
         this.height = 10;
-        this.y = Math.floor(Math.random()* (100 - this.height));
+        this.y = 40 //Math.floor(Math.random()* (100 - this.height));
         this.x = 100; 
         this.obstacleElm = null;
         this.gameElm = document.getElementById("game");
@@ -187,17 +215,18 @@ class Obstacle {
     }
 
     remove(){
+        console.log(this.obstacleElm);
         this.gameElm.removeChild(this.obstacleElm)
     }
 
 }
 
 class Bullet {
-    constructor(){
+    constructor(x,y){
         this.height = 5;
         this.width = 5;
-        this.x = 0;
-        this.y = 50;
+        this.x = x;
+        this.y = y;
         this.bullElm = null; 
         this.gameElm = document.getElementById("game");
     }
@@ -220,6 +249,7 @@ class Bullet {
     }
 
     remove(){
+        console.log(this.bullElm);
         this.gameElm.removeChild(this.bullElm)
     }
 
