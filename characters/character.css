@@ -1,0 +1,106 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Acme', sans-serif;;
+
+}
+
+.startGame{
+    height: 100vh;
+    width: 100wh;
+    background-image: url(../Images/bg8.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+    backdrop-filter: blur(5px)   
+     /* -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px); */
+
+}
+
+
+.main-text{
+    /* background-color: thistle; */
+    height: 700px;
+    width: 1200px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+
+}
+
+.main-text h1{
+    font-size: 80px;
+    color: rgb(255, 255, 255);
+    text-shadow: 10px 10px 35px black;
+    background-color: black;
+    opacity: 90%;
+    /* -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px); */
+}
+
+.characters{
+    /* background-color: blanchedalmond; */
+    height: 600px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ironman{
+    background-image: url(../Images/ironman.png);
+    background-size: cover;
+    height: 450px;
+    width: 300px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    box-shadow: 10px 10px 15px white;
+    border: 2px solid black;
+}
+.spider-man{
+    background-image: url(../Images/spider-man.jpeg);
+    background-size: cover;
+    height: 450px;
+    width: 300px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    box-shadow: 10px 10px 25px white;
+    border: 2px solid black;
+
+}
+.captain-america{
+    background-image: url(../Images/captain-america.jpeg);
+    background-size: cover;
+    height: 450px;
+    width: 300px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    box-shadow: 10px 10px 15px white;
+    border: 2px solid black;
+
+
+}
+
+.main-text a{
+    width: 300px;
+    font-size: 30px;
+    border: 1px solid black;
+    padding: 20px;
+    text-decoration: none;  
+    background-color: black;
+    color: white;
+    font-family: 'Acme', sans-serif;;
+    margin-bottom: 30px;
+    opacity: 80%;
+}
+
+.main-text a:hover{
+    background-color: rgb(0, 132, 255);
+    transition: 0.5s;
+    cursor: pointer;
+}

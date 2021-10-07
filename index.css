@@ -1,0 +1,46 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.startGame{
+    height: 100vh;
+    width: 100wh;
+    background-image: url(./Images/Background-7.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+
+.main-text{
+    background-color: thistle;
+    height: 400px;
+    width: 600px;
+    margin-left: 30px;
+}
+
+.main-text h1{
+    font-size: 80px;
+    font-family: 'Acme', sans-serif;;
+}
+
+.main-text a{
+    font-size: 30px;
+    border: 1px solid black;
+    padding: 20px;
+    text-decoration: none;  
+    background-color: black;
+    color: white;
+    font-family: 'Acme', sans-serif;;
+}
+
+.main-text a:hover{
+    background-color: #6E11F0;
+    transition: 0.5s;
+    cursor: pointer;
+}
