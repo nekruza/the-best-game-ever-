@@ -4,6 +4,8 @@ class Game {
         this.car = null; 
         this.obstacleArr = [];
         this.bulletArr = [];
+        this.prizeArr = [];
+        this.numBull = 20;
     }
 
     startGame(){
@@ -12,7 +14,7 @@ class Game {
         this.car.create();
         this.addEventlistener();
         
-       
+
         setInterval(()=>{
             this.currentTime++;
             
@@ -51,47 +53,39 @@ class Game {
             
         }, 1000) 
 
-        
+        // BULLET 
         setInterval( () =>{
 
-            this.bulletArr.forEach((bullet, index)=>{
+            this.bulletArr.forEach((bullet, bulletIndex)=>{
 
                 //move bullets
                 bullet.shoot()
                 bullet.draw();
 
-          
-                if(this.obstacleArr.length >0 ){
-
                     
-                this.bulletArr.forEach((bullet, index)=>{
+                // this.bulletArr.forEach((bullet, index)=>{
                     
-                    this.obstacleArr.forEach((obstacle, index)=>{
+                    this.obstacleArr.forEach((obstacle, obstacleIndex)=>{
                         if (bullet.x < obstacle.x + obstacle.width &&
                             bullet.x + bullet.width > obstacle.x &&
                             bullet.y < obstacle.y + obstacle.height &&
                             bullet.y + bullet.height > obstacle.y) {
                                 console.log('it touched')
 
-                                bullet.remove();
-                                // this.bulletArr.splice(index).remove();
-                                // @todo: remove this bullet from  bulletArr (.splice() + the index )
-                                
-                                /*
-                                bulletArr.pop() //end
-                                bulletArr.shift() //beginning
-                                bulletArr.splice() //middle
-                                */
-                               
-                               
-                               obstacle.remove();
-                            //    this.obstacleArr.splice(index).remove();
-                                // @todo: remove this obstacle from  obstacleArr
+                                if(this.numBull > 0) {
+
+                                    bullet.remove();
+                                    this.bulletArr.splice(bulletIndex, 1);
+                                    
+                                    
+                                    obstacle.remove();
+                                    this.obstacleArr.splice(obstacleIndex, 1);
+                                    
+                                }
                             } 
                         })
         
-                     })
-                } 
+                    //  })
                 
                 if(bullet.x > 100) {
                   bullet.remove();                    
@@ -102,6 +96,40 @@ class Game {
  
 
         }, 200)
+
+
+        //PRIZE
+        setInterval(()=>{
+            this.currentTime++;
+            
+            //create prizes
+            if(this.currentTime % 12 === 0){
+                const newPrize = new Prize();
+                newPrize.create();
+                this.prizeArr.push(newPrize)
+            }
+
+            this.prizeArr.forEach((prize) => {
+
+                //move obstacles
+                prize.movePrizeLeft()
+                prize.style();
+
+                //collision detection
+                if(this.car.x < prize.x + prize.width &&
+                    this.car.x + this.car.width > prize.x &&
+                    this.car.y < prize.y + prize.height &&
+                    this.car.y + this.car.height > prize.y){
+
+                    alert("game over!");
+
+                } else if(prize.x < 0) {
+                    prize.remove(); 
+                    this.prizeArr.shift(); 
+                }
+            })
+            
+        }, 1000)
 
         
 
@@ -130,10 +158,16 @@ class Game {
                     this.car.moveDown();
                     this.car.draw();
                 }
-            } else if(e.key === 'z'){
-                const bulletX = new Bullet(this.car.x, this.car.y);
-                bulletX.create();
-                this.bulletArr.push(bulletX)
+            } else if(e.key === 'z' ){
+                if(this.numBull > 0){
+                    const bulletX = new Bullet(this.car.x, this.car.y);
+                    bulletX.create();
+                    this.bulletArr.push(bulletX)
+                    this.numBull--;
+                    const numBullet = document.getElementById('numOfBul');
+                    numBullet.innerHTML = `#Bullet: ${this.numBull}`
+                    // console.log(this.numBull)
+                }
             }
         })
     }
@@ -251,6 +285,41 @@ class Bullet {
     remove(){
         console.log(this.bullElm);
         this.gameElm.removeChild(this.bullElm)
+    }
+
+}
+
+
+class Prize {
+    constructor(){
+        this.width = 7;
+        this.height = 7;
+        this.y = 20 //Math.floor(Math.random()* (100 - this.height));
+        this.x = 100; 
+        this.prizeElm = null;
+        this.gameElm = document.getElementById("game");
+    }
+
+    movePrizeLeft(){
+        this.x -= 5;
+
+    }
+
+    create(){
+        this.prizeElm = document.createElement('div');
+        this.prizeElm.id = 'prize';
+        this.gameElm.appendChild(this.prizeElm)
+    }
+
+    style(){
+        this.prizeElm.style.width = this.width + '%';
+        this.prizeElm.style.height = this.height + '%';
+        this.prizeElm.style.left = this.x + '%'; 
+        this.prizeElm.style.top = this.y + '%'; 
+    }
+
+    remove(){
+        this.gameElm.removeChild(this.prizeElm)
     }
 
 }
