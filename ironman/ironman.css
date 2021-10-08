@@ -42,6 +42,67 @@ body{
 
 }
 
+#gameOver{
+    visibility: hidden;
+}
+
+#container{
+    z-index: 200;
+    height: 460px;
+    width: 600px;
+    background-color: white;
+    position: absolute;
+    top: 250px;
+    left: 500px;
+    background-image: url(/Images/you-won.jpg);
+    background-size: contain;
+    box-shadow: 0 0 25px rgb(255, 255, 255);
+    border: 2px solid blanchedalmond;
+    border-radius: 2%;
+}
+
+#coverup{
+    display: flex;
+    flex-direction: column;
+}
+
+#won-message h1{
+    color: white;
+    font-size: 60px;
+    background-color: rgb(0, 9, 63);
+    margin: 20px auto;
+    width: 400px;
+}
+
+#won-message h2{
+    color: white;
+    font-size: 30px;
+    margin-top: 220px;
+    background-color: black;
+    opacity: 80%;
+}
+#play-again a{
+    text-decoration: none;
+    color: white;
+}
+
+#play-again button{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-size: larger;
+    font-weight: bolder;
+    opacity: 80%;
+    text-decoration: none;
+}
+
+#play-again button:hover{
+    background-color: rgb(0, 0, 202);
+    transition: 1s;
+    color: white;
+    font-size: larger;
+} 
+
 #timer{
     position: absolute;
     top: 860px;

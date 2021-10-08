@@ -9,6 +9,7 @@ class Game {
         this.rocketArr = [];
         this.numBull = 20;
         this.rocketNum = 3;
+        // this.button = null;
     }
 
     startGame(){
@@ -18,7 +19,7 @@ class Game {
         this.addEventlistener();
         
         //OBSTACLE ------------------------
-
+        
         const intervalId = setInterval(()=>{
             this.currentTime++;
             
@@ -46,6 +47,8 @@ class Game {
                 } else if(obstacle.x < 0) {
                     obstacle.remove(); 
                     this.obstacleArr.shift(); 
+                } else if(this.currentTime === 600){
+                    clearInterval(intervalId)
                 }
             })
 
@@ -53,9 +56,16 @@ class Game {
                 const timer = document.getElementById('timer');
                 timer.innerHTML = `Timer: ${this.currentTime/10}`;
             }
+
+            if(this.currentTime === 600){
+                const background = document.getElementById('gameOver')
+                background.style.visibility = 'visible';
+            }
             
             
-        }, 100) 
+            
+        }, 100) ;
+
 
         // BULLET ---------------------
          setInterval( () =>{
@@ -184,6 +194,9 @@ class Game {
         
 
     }
+
+ 
+    //------------------------
 
     addEventlistener(){
         document.addEventListener("keydown", (e)=>{

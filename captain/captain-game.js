@@ -46,12 +46,18 @@ class Game {
                 } else if(obstacle.x < 0) {
                     obstacle.remove(); 
                     this.obstacleArr.shift(); 
+                }else if(this.currentTime === 600){
+                    clearInterval(intervalId)
                 }
             })
 
             if(this.currentTime % 10 === 0){
                 const timer = document.getElementById('timer');
                 timer.innerHTML = `Timer: ${this.currentTime/10}`;
+            }
+            if(this.currentTime === 600){
+                const background = document.getElementById('gameOver')
+                background.style.visibility = 'visible';
             }
             
             
