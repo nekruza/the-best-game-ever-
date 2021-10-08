@@ -30,7 +30,7 @@ body{
     top: 40px; 
     /* background-color: rgb(255, 255, 255); */
     margin: auto;
-    background-image: url(/Images/endgame_background\ pic.jpeg);
+    background-image: url(/Images/bg8.jpg);
     /* background-repeat: no-repeat; */
     background-size: cover;
     border-radius: 1%;
@@ -64,7 +64,7 @@ body{
 #numOfBul{
     position: absolute;
     top: 860px;
-    left: 465px;
+    left: 550px;
     font-weight: 400;
     font-size: 25px;
     color: rgb(170, 228, 255);;
@@ -80,6 +80,74 @@ body{
     text-align: left;
 }
 
+#spiderman{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(41, 0, 0);
+    background-image: url(/Images/spiderman-face-removebg-preview.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 20px;
+    left: 350px;
+    border-radius: 100%;
+    border: 1px solid white;
+}
+
+#spiderman a{
+    display: flex;
+    margin: auto;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background-color: transparent;
+}
+
+#ironman{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(77, 50, 0);
+    background-image: url(/Images/ironman-face-removebg-preview.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 20px;
+    left: 490px;
+    border-radius: 100%;
+    border: 1px solid white;
+
+}
+
+#ironman a{
+    display: flex;
+    margin: auto;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background-color: transparent;
+}
+
+#captain{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(16, 0, 87);
+    background-image: url(/Images/captain-face-removebg-preview.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 20px;
+    left: 630px;
+    border-radius: 100%;
+    border: 4px solid white;
+    box-shadow: 0 0 20px white;
+
+}
+
 
 /* .nameGame{
     position: absolute;
@@ -93,7 +161,7 @@ body{
 #car {
     background-color: transparent;
     position: absolute;
-    background-image: url(/Images/ironman-removebg-preview.png);
+    background-image: url(/Images/captain-america-removebg-preview.png);
     background-size: cover;
     border-radius: 20%;
     /* box-shadow: 10px 10px 15px rgb(42, 42, 42); */
@@ -128,7 +196,7 @@ body{
 .rocket{
     background-color: transparent;
     position: absolute;
-    background-image: url(/Images/Rocket.png);
+    background-image: url(/Images/thor-hammer-removebg-preview.png);
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 20%;
@@ -137,8 +205,8 @@ body{
 .bulletX{
     background-color: transparent;
     position: absolute;
-    background-image: url(/Images/fire-bullet-removebg-preview.png);
-    background-size: cover;
+    background-image: url(/Images/captain-shield-removebg-preview.png);
+    background-size: contain;
     background-repeat: no-repeat;
     border-radius: 20%;
 }

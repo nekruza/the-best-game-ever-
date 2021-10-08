@@ -7,8 +7,8 @@ class Game {
         this.bulletArr = [];
         this.prizeArr = [];
         this.rocketArr = [];
-        this.numBull = 10;
-        this.rocketNum = 10;
+        this.numBull = 100;
+        this.rocketNum = 5;
     }
 
     startGame(){
@@ -19,7 +19,7 @@ class Game {
         
         //OBSTACLE ------------------------
 
-        setInterval(()=>{
+        const intervalId = setInterval(()=>{
             this.currentTime++;
             
             //create obstacles
@@ -40,7 +40,7 @@ class Game {
                     this.car.x + this.car.width > obstacle.x &&
                     this.car.y < obstacle.y + obstacle.height &&
                     this.car.y + this.car.height > obstacle.y){
-
+                    clearInterval(intervalId)
                     alert("game over!");
 
                 } else if(obstacle.x < 0) {
@@ -147,39 +147,39 @@ class Game {
 
 
         //PRIZE ---------------------------
-        setInterval(()=>{
-            this.rolex++;
+        // setInterval(()=>{
+        //     this.rolex++;
             
-            //create prizes
-            if(this.currentTime % 100 === 0){
-                const newPrize = new Prize();
-                newPrize.create();
-                this.prizeArr.push(newPrize)
-            }
+        //     //create prizes
+        //     if(this.currentTime % 100 === 0){
+        //         const newPrize = new Prize();
+        //         newPrize.create();
+        //         this.prizeArr.push(newPrize)
+        //     }
 
-            this.prizeArr.forEach((prize, indexPrize) => {
+        //     this.prizeArr.forEach((prize, indexPrize) => {
 
-                //move obstacles
-                prize.movePrizeLeft()
-                prize.drawPrize();
+        //         //move obstacles
+        //         prize.movePrizeLeft()
+        //         prize.drawPrize();
 
-                //collision detection
-                if(this.car.x < prize.x + prize.width &&
-                    this.car.x + this.car.width > prize.x &&
-                    this.car.y < prize.y + prize.height &&
-                    this.car.y + this.car.height > prize.y){
+        //         //collision detection
+        //         if(this.car.x < prize.x + prize.width &&
+        //             this.car.x + this.car.width > prize.x &&
+        //             this.car.y < prize.y + prize.height &&
+        //             this.car.y + this.car.height > prize.y){
 
-                    this.numBull += 5;
-                    prize.remove();
-                    this.prizeArr.splice(indexPrize, 1);
+        //             this.numBull += 5;
+        //             prize.remove();
+        //             this.prizeArr.splice(indexPrize, 1);
 
-                } else if(prize.x < 0) {
-                    prize.remove(); 
-                    this.prizeArr.shift(); 
-                }
-            })
+        //         } else if(prize.x < 0) {
+        //             prize.remove(); 
+        //             this.prizeArr.shift(); 
+        //         }
+        //     })
             
-        }, 100)
+        // }, 100)
 
         
 
@@ -216,7 +216,7 @@ class Game {
                     this.bulletArr.push(bulletX)
                     this.numBull--;
                     const numBullet = document.getElementById('numOfBul');
-                    numBullet.innerHTML = `#Bullet: ${this.numBull}`
+                    numBullet.innerHTML = `#Shield: ${this.numBull}`
                     // console.log(this.numBull)
                 }
             } else if (e.key === 'x'){
@@ -226,7 +226,7 @@ class Game {
                     this.rocketArr.push(rocketX)
                     this.rocketNum--;
                     const rocketNum = document.getElementById('rocketNum');
-                    rocketNum.innerHTML = `#Rocket: ${this.rocketNum}`
+                    rocketNum.innerHTML = `#Thor Hammer: ${this.rocketNum}`
                 }
 
             }
@@ -286,7 +286,7 @@ class Obstacle {
     constructor(){
         this.width = 10;
         this.height = 20;
-        this.y = 20 //Math.floor(Math.random()* (100 - this.height));
+        this.y = Math.floor(Math.random()* (100 - this.height));
         this.x = 100; 
         this.obstacleElm = null;
         this.gameElm = document.getElementById("game");
@@ -356,8 +356,8 @@ class Bullet {
     constructor(x,y){
         this.x = x;
         this.y = y;
-        this.width = 8;
-        this.height = 5;
+        this.width = 6;
+        this.height = 12;
         this.bullElm = null, 
         this.gameElm = document.getElementById("game");
     }

@@ -1,3 +1,15 @@
+[ ] Functionality for Bullets
+    [ ] Player can shoot
+    [ ] Remove Bullets off board
+    [ ] Detect collision bullets-obstacles
+
+[ ] UX
+    [ ] Adding images
+    [ ] Improving ux
+
+([ ] Count points, levelvs...)
+
+
 Game map (Horizontal)
 Display car
 Allow car to move 
