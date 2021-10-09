@@ -8,7 +8,7 @@ body{
 
 
 .background{
-    background-image: url(/Images/avengers\ logo.jpg);
+    background-image: url(../Images/avengers\ logo.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -30,7 +30,7 @@ body{
     top: 40px; 
     /* background-color: rgb(255, 255, 255); */
     margin: auto;
-    background-image: url(/Images/bg8.jpg);
+    background-image: url(../Images/bg8.jpg);
     /* background-repeat: no-repeat; */
     background-size: cover;
     border-radius: 1%;
@@ -55,7 +55,7 @@ body{
     position: absolute;
     top: 250px;
     left: 500px;
-    background-image: url(/Images/you-won.jpg);
+    background-image: url(../Images/you-won.jpg);
     background-size: contain;
     box-shadow: 0 0 25px rgb(255, 255, 255);
     border: 2px solid blanchedalmond;
@@ -147,7 +147,7 @@ body{
     width: 100px;
     height: 100px;
     background-color: rgb(41, 0, 0);
-    background-image: url(/Images/spiderman-face-removebg-preview.png);
+    background-image: url(../Images/spiderman-face-removebg-preview.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -172,7 +172,7 @@ body{
     width: 100px;
     height: 100px;
     background-color: rgb(77, 50, 0);
-    background-image: url(/Images/ironman-face-removebg-preview.png);
+    background-image: url(../Images/ironman-face-removebg-preview.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -198,7 +198,7 @@ body{
     width: 100px;
     height: 100px;
     background-color: rgb(16, 0, 87);
-    background-image: url(/Images/captain-face-removebg-preview.png);
+    background-image: url(../Images/captain-face-removebg-preview.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -224,7 +224,7 @@ body{
 #car {
     background-color: transparent;
     position: absolute;
-    background-image: url(/Images/captain-america-removebg-preview.png);
+    background-image: url(../Images/captain-america-removebg-preview.png);
     background-size: cover;
     border-radius: 20%;
     /* box-shadow: 10px 10px 15px rgb(42, 42, 42); */
@@ -233,14 +233,14 @@ body{
 .obstacle{
     background-color: transparent;
     position: absolute;
-    background-image: url(/Images/Screenshot_2021-10-07_at_11.05.59-removebg-preview.png);
+    background-image: url(../Images/Screenshot_2021-10-07_at_11.05.59-removebg-preview.png);
     background-size: cover;
 }
 
 .prize{
     background-color: transparent;
     position: absolute;
-    background-image: url(/Images/ironman_bag-removebg-preview.png);
+    background-image: url(../Images/ironman_bag-removebg-preview.png);
     background-size: contain;
     background-repeat: no-repeat;
     border-radius: 20%;
@@ -259,7 +259,7 @@ body{
 .rocket{
     background-color: transparent;
     position: absolute;
-    background-image: url(/Images/thor-hammer-removebg-preview.png);
+    background-image: url(../Images/thor-hammer-removebg-preview.png);
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 20%;
@@ -268,7 +268,7 @@ body{
 .bulletX{
     background-color: transparent;
     position: absolute;
-    background-image: url(/Images/captain-shield-removebg-preview.png);
+    background-image: url(../Images/captain-shield-removebg-preview.png);
     background-size: contain;
     background-repeat: no-repeat;
     border-radius: 20%;
