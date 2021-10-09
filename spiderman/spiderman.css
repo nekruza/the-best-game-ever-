@@ -8,7 +8,7 @@ body{
 
 
 .background{
-    background-image: url(/Images/avengers\ logo.jpg);
+    background-image: url(../Images/avengers\ logo.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -30,7 +30,7 @@ body{
     top: 40px; 
     /* background-color: rgb(255, 255, 255); */
     margin: auto;
-    background-image: url(/Images/warzone.jpg);
+    background-image: url(../Images/warzone.jpg);
     /* background-repeat: no-repeat; */
     background-size: cover;
     border-radius: 1%;
