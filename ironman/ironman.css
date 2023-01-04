@@ -8,7 +8,7 @@ body {
 
 #arrow {
   position: absolute;
-  top: 30px;
+  top: 10px;
   right: 40px;
   font-weight: 400;
   font-size: 25px;
@@ -16,7 +16,7 @@ body {
 }
 #shoot-1 {
   position: absolute;
-  top: 70px;
+  top: 45px;
   right: 40px;
   font-weight: 400;
   font-size: 25px;
@@ -117,8 +117,8 @@ body {
 
 #timer {
   position: absolute;
-  top: 840px;
-  left: 190px;
+  top: 45px;
+  left: 720px;
   font-weight: 400;
   font-size: 25px;
   color: rgb(170, 228, 255);
@@ -127,8 +127,8 @@ body {
 
 #rocketNum {
   position: absolute;
-  top: 840px;
-  left: 310px;
+  top: 45px;
+  left: 840px;
   font-weight: 400;
   font-size: 25px;
   color: rgb(170, 228, 255);
@@ -136,8 +136,8 @@ body {
 
 #numOfBul {
   position: absolute;
-  top: 840px;
-  left: 550px;
+  top: 45px;
+  left: 980px;
   font-weight: 400;
   font-size: 25px;
   color: rgb(170, 228, 255);
@@ -145,7 +145,7 @@ body {
 
 #players {
   position: absolute;
-  top: 40px;
+  top: 20px;
   left: 60px;
   font-weight: 400;
   font-size: 35px;
@@ -154,15 +154,15 @@ body {
 }
 
 #spiderman {
-  width: 90px;
-  height: 90px;
+  width: 60px;
+  height: 60px;
   background-color: rgb(41, 0, 0);
   background-image: url(../Images/spiderman-face-removebg-preview.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
-  top: 20px;
+  top: 15px;
   left: 350px;
   border-radius: 100%;
   border: 1px solid white;
@@ -179,32 +179,32 @@ body {
 }
 
 #ironman {
-  width: 90px;
-  height: 90px;
+  width: 60px;
+  height: 60px;
   background-color: rgb(77, 50, 0);
   background-image: url(../Images/ironman-face-removebg-preview.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
-  top: 20px;
-  left: 490px;
+  top: 15px;
+  left: 440px;
   border-radius: 100%;
   border: 4px solid white;
   box-shadow: 0 0 20px white;
 }
 
 #captain {
-  width: 90px;
-  height: 90px;
+  width: 60px;
+  height: 60px;
   background-color: rgb(16, 0, 87);
   background-image: url(../Images/captain-face-removebg-preview.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
-  top: 20px;
-  left: 630px;
+  top: 15px;
+  left: 530px;
   border-radius: 100%;
   border: 1px solid white;
 }
@@ -255,8 +255,8 @@ body {
 
 #numOfBul {
   position: absolute;
-  top: 840px;
-  left: 40px;
+  top: 45px;
+  left: 980px;
   font-weight: 400;
   font-size: 25px;
   color: rgb(170, 228, 255);
